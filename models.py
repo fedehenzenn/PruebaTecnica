@@ -3,7 +3,7 @@ from xmlrpc.client import DateTime
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
 
-from .database import Base
+from database import Base
 
 class Vacancy(Base):
     __tablename__ = "vacancies"
@@ -20,16 +20,17 @@ class Vacancy(Base):
 class Company(Base):
     __tablename__ = "companies"
     
-    company_id = Column(Integer, primary_key=True, index=True)
-    name = Column(Integer)
+    company_id = Column(Integer, primary_key=True, index=True,autoincrement=True)
+    name = Column(Integer, primary_key=True,)
     link = Column(Integer)
     city = Column(Integer)
-    date_added = Column(DateTime) 
+    #date_added = Column(DateTime) 
     contact_first_name = Column(Integer)
     contact_last_name = Column(Integer)
     contact_phone_number = Column(Integer)
     contact_email = Column(Integer)
     country = Column(Integer)
     vacancies = relationship("Vacancy")
+
     
 
