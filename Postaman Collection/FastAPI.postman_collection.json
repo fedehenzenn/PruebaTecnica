@@ -1,0 +1,402 @@
+{
+	"info": {
+		"_postman_id": "3c0213a5-1feb-47ca-9589-ce3369f0b63d",
+		"name": "FastAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "company",
+			"item": [
+				{
+					"name": "{company id}",
+					"item": [
+						{
+							"name": "Read Company",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/company/1b85095c-6d12-41c4-af1a-5c82c1493bda",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"company",
+										"1b85095c-6d12-41c4-af1a-5c82c1493bda"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "37c695bf-4128-4313-888d-1c6521582172",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Companies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/company/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"company",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Company",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"tempor2 dolore\",\n  \"link\": \"ex laborum\",\n  \"city\": \"ex anim\",\n  \"date_added\": \"2007-05-18\",\n  \"contact_first_name\": \"eiusmod esse adipisicing sint nostrud\",\n  \"contact_last_name\": \"fugiat velit exercitation\",\n  \"contact_phone_number\": \"nisi Duis Ut cillum\",\n  \"contact_email\": \"anim et veniam eu sunt\",\n  \"country\": \"arge\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/company/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"company",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Company",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/company/d6873582-65e2-415e-b565-d7f144ae177a",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"company",
+								"d6873582-65e2-415e-b565-d7f144ae177a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Company",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"tempor dolore\",\n  \"link\": \"ex laborum\",\n  \"city\": \"ex anim\",\n  \"date_added\": \"2007-05-18\",\n  \"contact_first_name\": \"eiusmod esse adipisicing sint nostrud\",\n  \"contact_last_name\": \"fugiat velit exercitation\",\n  \"contact_phone_number\": \"nisi Duis Ut cillum\",\n  \"contact_email\": \"anim et veniam eu sunt\",\n  \"country\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/update_company/af1b859b-2e0a-40d4-b220-05a9ffaa1b77",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"update_company",
+								"af1b859b-2e0a-40d4-b220-05a9ffaa1b77"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vacancy",
+			"item": [
+				{
+					"name": "{vacancy id}",
+					"item": [
+						{
+							"name": "Read Vacancy",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/vacancy/90913b79-814e-4299-99af-8b5db54825e5",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"vacancy",
+										"90913b79-814e-4299-99af-8b5db54825e5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Vacancy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/vacancy/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"vacancy",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Company",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/vacancy/ce186069-7883-4331-afbc-d02597e8f600",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"vacancy",
+								"ce186069-7883-4331-afbc-d02597e8f600"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Vacancy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"company_id\": \"af1b859b-2e0a-40d4-b220-05a9ffaa1b77\",\n  \"position_name\": \"ex enim id qui\",\n  \"salary\": -16765378,\n  \"max_experience\": 4,\n  \"vacancy_link\": \"fugiat do\",\n  \"min_experience\": 2,\n  \"skills\": \"consectetur culpa ea sed\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/vacancy/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"vacancy",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Vacancy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"company_id\": \"af1b859b-2e0a-40d4-b220-05a9ffaa1b77\",\n  \"position_name\": \"ex enim id qui\",\n  \"salary\": -16765378,\n  \"max_experience\": -30898474,\n  \"vacancy_link\": \"fugiat do\",\n  \"min_experience\": 73958252,\n  \"skills\": \"consectetur culpa ea sed\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/update_vacancy/68c996d8-fcb3-4bbd-ba38-bbf55fa4c29c",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"update_vacancy",
+								"68c996d8-fcb3-4bbd-ba38-bbf55fa4c29c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local host",
+			"value": "http://127.0.0.1:8000/",
+			"type": "string"
+		}
+	]
+}

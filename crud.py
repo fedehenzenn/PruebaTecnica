@@ -9,22 +9,8 @@ from fastapi import HTTPException
 def CreateDatabase():
     return Base.metadata.create_all(bind=engine)
 
-
-
-def get_vacancy(db: Session, vacancy_id: str):
-    return db.query(models.Vacancy).filter(models.Vacancy.vacancy_id == vacancy_id).first()
-
-
-
-def create_new_vacancy(vacancy:schemas.Vacancy,db:Session):
-    db_vacancy = models.Vacancy(**vacancy.dict())
-    db.add(db_vacancy)
-    db.commit()
-    db.refresh(db_vacancy)
-    return db_vacancy
-
 def get_company(db: Session, company_id: str):
-    company = db.query(models.Company).filter(company_id == company_id).first()
+    company = db.query(models.Company).filter(models.Company.company_id == company_id).first()
     return company
 
 def get_companies(db: Session):
@@ -113,11 +99,11 @@ def get_vacancies(db: Session):
     vacancies = db.query(models.Vacancy).offset(0).limit(100).all()
     return vacancies
 
+
 def update_vacancy(vacancy:schemas.Vacancy, vacancy_id: str, db: Session):
-    db_vacancy = db.query(models.v).filter(models.Vacancy.vacancy_id == vacancy_id).first()
+    db_vacancy = db.query(models.Vacancy).filter(models.Vacancy.vacancy_id == vacancy_id).first()
     if db_vacancy is None:
         raise HTTPException(status_code=404, detail="Vacancy not found")
-    db_vacancy.vacancy_id = vacancy.vacancy_id
     db_vacancy.position_name = vacancy.position_name
     db_vacancy.salary = vacancy.salary
     db_vacancy.max_experience = vacancy.max_experience
