@@ -56,22 +56,12 @@ def delete_company(company_id: str, db: Session = Depends(get_db)):
 
 @app.put("/update_company/{company_id}")
 def update_company(company_id: str, updateCompany: schemas.Company, db: Session = Depends(get_db)):
-    return crud.update_company(updateCompany,company_id),db
+    return crud.update_company(updateCompany,company_id,db)
     
-
-@app.get("/vacancy_in_company/{company_id}")
-def vacancy_in_company(company_id: int):
-    vacancies_in_company = []
-    for vacancy_t in vancancies:
-        if vacancy_t.CompanyId == company_id:
-            vacancies_in_company.append(vacancy_t)
-    if not vacancies_in_company:
-        raise HTTPException(status_code=400, detail="The company has no vacancies")
-    return vacancies_in_company
 
 @app.post("/vacancy/")
 def create_vacancy(new_vacancy: schemas.Vacancy, db: Session = Depends(get_db)):
-    return crud.create_new_vacancy(new_vacancy,db)
+    return crud.create_new_vacancy(new_vacancy, db)
 
 @app.get("/vacancy/")
 def get_vacancy(db: Session = Depends(get_db)):
@@ -85,16 +75,15 @@ def read_vacancy(vacancy_id: str, db: Session = Depends(get_db)):
     return db_vacancy 
 
 @app.delete("/vacancy/{vacancy_id}")
-def delete_company(vacancy_id: int):
-    for index,vacancy in enumerate(vancancies):
-        if vacancy.VacancyId == vacancy_id:
-            vancancies.pop(index)
-            return { "message": "Vacancy has been deleted"}
-    raise HTTPException(status_code=404, detail="Vacancy not found")
+def delete_vacancy(vacancy_id: str, db: Session = Depends(get_db)):
+    db_vacancy = crud.delete_vacancy(vacancy_id, db)
+    if db_vacancy is None:
+       raise HTTPException(status_code=404, detail="Vacancy not found")
+    return db_vacancy 
 
 @app.put("/update_vacancy/{vacancy_id}")
 def update_vacancy(vacancy_id: str, updateVacancy: schemas.Vacancy, db: Session = Depends(get_db)):
-    return crud.update_vacancy(updateVacancy,vacancy_id),db
+    return crud.update_vacancy(updateVacancy,vacancy_id,db)
 
 
 
