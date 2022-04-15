@@ -4,14 +4,14 @@ from pydantic import BaseModel
 from typing import Optional
 
 class Vacancy(BaseModel):
-    VacancyId: Optional[int]
-    CompanyId: int
-    PositionName: str
-    Salary : int
-    MaxExperience: int
-    VacancyLink: str
-    MinExperience: int
-    Skills: str
+    vacancy_id: Optional[str]
+    company_id: str
+    position_name: str
+    salary : int
+    max_experience: int
+    vacancy_link: str
+    min_experience: int
+    skills: str
 
     class Config:
         orm_mode = True
@@ -20,16 +20,17 @@ class Vacancy(BaseModel):
 
 
 class Company(BaseModel):
-    CompanyId: Optional[int]
-    Name: str
-    Link: str
-    City: str
-    DateAdded: Date
-    ContactFirstName: str
-    ContactLastName: str
-    ContactPhoneNumber: str
-    ContactEmail: str
-    Country: str
+    company_id: Optional[str]
+    name: str
+    link: str
+    city: str
+    date_added: Date
+    contact_first_name: str
+    contact_last_name: str
+    contact_phone_number: str
+    contact_email: str
+    country: str
     
     class Config:
         orm_mode = True
+    
