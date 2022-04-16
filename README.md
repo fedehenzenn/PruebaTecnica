@@ -127,4 +127,5 @@ FastApi project for a technical test.
 | `vacancy_link`  | `string` | 
 | `skills`  | `string` | 
 
-Heroku link: https://fastapihunty.herokuapp.com/
+#### Heroku link
+* https://fastapihunty.herokuapp.com/
